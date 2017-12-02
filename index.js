@@ -18,6 +18,19 @@ app.post('/api/json', (req, res) => {
 	res.send(nodes);
 });
 
+app.get('/api/json', (req, res) => {
+	message = "Your data ";
+	// res.send("ok");
+	for(let key in req.query) {
+		message += `${key}: ${req.query[key]}`
+	}
+	
+	let nodes = [];
+	nodes.push(nodeText(message));
+
+	res.send(nodes);
+})
+
 function nodeText(text) {
 	const data = {
     "node_type":"node",
