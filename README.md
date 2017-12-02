@@ -4,9 +4,8 @@
 
 1. สร้างบอทสำหรับทดสอบใน https://sid.hbot.io
 2. ไปที่หน้า Config
-3. ทำการ Import ไฟล์ `.hbot`
+3. ทำการ Import ไฟล์ `2112017_1578.hbot`
 4. เชื่อมต่อกับเพจเพื่อทดสอบ
-
 
 ---
 
@@ -16,9 +15,8 @@ body:
 ```json
 {
 	"nodes" : [
-			{ NODE_1 },
-			{ NODE_2 },
-			...
+		{ NODE_1 },
+		{ NODE_2 }
 	]
 }
 ```
@@ -31,8 +29,8 @@ body:
 - Video
 - File
 - Carousel
-- **Go To Block**
 - Set Attributes
+- Go To Block
 
 ---
 
@@ -135,13 +133,27 @@ body:
 ---
 
 
+### Node Type Set Attributes
+```json
+{
+  "node_type": "set_attr",
+  "todo": [{
+    "attr_name": "ชื่อ Attribute",
+		"attr_value": "ค่าที่จะเก็บ"
+  }]
+}
+```
+
+---
+
+
 ### Node Type Go To Block
 ```json
 {
   "node_type": "gotoblock",
   "directions": [{
     "conditions": [{
-        "condition": "and", //"and", "or"
+        "condition": "and",
         "first_val": "{{first_name}}",
         "operation": "=",
         "second_val": "xxxxx"
@@ -157,20 +169,6 @@ body:
 | `condition`	| Can be `and` or `or`
 | `first_val` | If use `{{attribute}}` it will be replace with user attribute
 | `operation`	| Can be "=", "!=", ">", "<", ">=" or "<="
-
----
-
-
-### Node Type Set Attributes
-```json
-{
-  "node_type": "set_attr",
-  "todo": [{
-    "attr_name": "ชื่อ Attribute",
-		"attr_value": "ค่าที่จะเก็บ"
-  }]
-}
-```
 
 ---
 

@@ -20,7 +20,6 @@ app.post('/api/json', (req, res) => {
 
 app.get('/api/json', (req, res) => {
 	message = "Your data ";
-	// res.send("ok");
 	for(let key in req.query) {
 		message += `${key}: ${req.query[key]}`
 	}
