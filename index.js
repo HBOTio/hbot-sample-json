@@ -12,8 +12,10 @@ app.post('/api/json', (req, res) => {
 		message += `${key}: ${req.body[key]}`
 	}
 	
-	let nodes = [];
-	nodes.push(nodeText(message));
+	let nodes = {
+		"nodes": []
+	};
+	nodes["nodes"].push(nodeText(message));
 
 	res.send(nodes);
 });
@@ -24,7 +26,9 @@ app.get('/api/json', (req, res) => {
 		message += `${key}: ${req.query[key]}`
 	}
 	
-	let nodes = [];
+	let nodes = {
+		"nodes": []
+	};
 	nodes.push(nodeText(message));
 
 	res.send(nodes);
