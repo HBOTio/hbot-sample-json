@@ -29,7 +29,7 @@ app.get('/api/json', (req, res) => {
 	let nodes = {
 		"nodes": []
 	};
-	nodes.push(nodeText(message));
+	nodes["nodes"].push(nodeText(message));
 
 	res.send(nodes);
 })
